@@ -1,19 +1,22 @@
 import React, { useState } from 'react';
 import './QuizComponent.css'
 
-function shuffleAnswers(question) {
+function shuffle(question) {
     const allAnswers = question.incorrect_answers.concat(question.correct_answer); // Combine all answers
     const shuffledAnswers = allAnswers.sort(() => Math.random() - 0.5); // Shuffle using random sort
     return shuffledAnswers;
 }
 
 function QuestionComponent({ question }) {
-    const [shuffledAnswersArray, setShuffledAnswersArray] = useState(shuffleAnswers(question)); // Store shuffled answers in state
+    // const [shuffledAnswersArray, setShuffledAnswersArray] = useState(shuffle(question)); // Store shuffled answers in state
     const [selectedIndex, setSelectedIndex] = useState(null); // Track selected answer index
     const [isAnswered, setIsAnswered] = useState(false)
     const [feedback, setFeedback] = useState(null);
     const [answerClass, setAnswerClass] = useState('')
+
+    const shuffledAnswersArray = shuffle(question)
     const correctAnswerIndex = shuffledAnswersArray.indexOf(question.correct_answer);
+
 
     const handleRadioChange = (event) => {
         setSelectedIndex(parseInt(event.target.value)); // Parse selected index from value
@@ -34,6 +37,7 @@ function QuestionComponent({ question }) {
         <div key={question.question} className={answerClass}>
             <h3>{question.question}</h3>
             <form onSubmit={(e) => e.preventDefault()}>
+                {console.log(shuffledAnswersArray)}
                 {shuffledAnswersArray.map((element, index) => (
                     <div key={index}>
                         <input
