@@ -17,6 +17,30 @@ function GeneratePage() {
         case 'music':
             categoryCode = 12
             break;
+        case 'science & nature':
+            categoryCode = 17
+            break;
+        case 'computers':
+            categoryCode = 18
+            break;
+        case 'math':
+            categoryCode = 19
+            break;
+        case 'music':
+            categoryCode = 12
+            break;
+        case 'music':
+            categoryCode = 12
+            break;
+        case 'geography':
+            categoryCode = 22
+            break;
+        case 'history':
+            categoryCode = 23
+            break;
+        case 'anime & manga':
+            categoryCode = 31
+            break;
     }
     const [selectedDifficulty, setSelectedDifficulty] = useState('');
     const [showQuizComponent, setShowQuizComponent] = useState(false);

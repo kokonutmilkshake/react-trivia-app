@@ -6,6 +6,12 @@ function Home() {
     { name: 'books', img: 'books.jpg' },
     { name: 'films', img: 'films.jpg' },
     { name: 'music', img: 'music.jpg' },
+    { name: 'science & nature', img: 'science & nature.jpg' },
+    { name: 'computers', img: 'computers.jpg' },
+    { name: 'math', img: 'math.jpg' },
+    { name: 'geography', img: 'geography.jpg' },
+    { name: 'history', img: 'history.jpg' },
+    { name: 'anime & manga', img: 'anime & manga.jpg' },
   ];
 
   return (
